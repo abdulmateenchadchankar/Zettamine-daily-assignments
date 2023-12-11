@@ -9,6 +9,7 @@ public class PermanentEmployee extends Employee {
 	public PermanentEmployee(int employeeId, String employeeName, double basicPay) {
 		super(employeeId, employeeName);
 		this.basicPay = basicPay;
+		calculateSalary();
 	}
 
 
@@ -17,8 +18,8 @@ public class PermanentEmployee extends Employee {
 
 	@Override
 	public void calculateSalary() {
-		double PF_Amount = basicPay * 0.12;
-		salary = this.basicPay - PF_Amount;
+		double PF_Amount = this.basicPay * 0.12;
+		this.setSalary(this.basicPay - PF_Amount);
 	}
 
 }

@@ -10,6 +10,7 @@ public class TemporaryEmployee extends Employee {
 		super(employeeId, employeeName);
 		this.hoursWorked = hoursWorked;
 		this.hourlyWages = hourlyWages;
+		calculateSalary();
 	}
 
 
@@ -17,6 +18,7 @@ public class TemporaryEmployee extends Employee {
 	@Override
 	public void calculateSalary() {
 		salary = hoursWorked * hourlyWages;
+		this.setSalary(this.hourlyWages* this.hoursWorked);
 	}
 
 }

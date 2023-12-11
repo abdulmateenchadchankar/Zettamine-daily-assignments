@@ -24,9 +24,10 @@ public class PfMain {
 			
 			Employee pf = new PermanentEmployee(employeeId, employeeName, basicPay);
 			System.out.println();
-			
-			System.out.printf("The Calculated Salary is: ", pf.calculateSalary());
-			System.out.printf("The loan amount is ", ((PermanentEmployee) pf).calculateLoanAmount());
+			Loan ln = new Loan();
+			System.out.println("The Calculated Salary is: "+ pf.getSalary());
+			System.out.println("The loan amount is "+ ln.calculateLoanAmount(pf)) ;
+			return;
 		}else if (choice == 2 ){
 			System.out.println("Enter Employee Id: ");
 			int employeeId = sc.nextInt();
@@ -38,14 +39,17 @@ public class PfMain {
 			int hoursWorked =sc.nextInt();
 			
 			System.out.println("Enter hourly wages ");
+			int hourlyWages = sc.nextInt();
 			
-			System.out.println("");
-			
-			Employee pf = new TemporaryEmployee(employeeId, employeeName, hoursWorked, hourlyWages);
 			System.out.println();
 			
-			System.out.printf("The Calculated Salary is: ", pf.calculateSalary());
-			System.out.printf("The loan amount is ", ((PermanentEmployee) pf).calculateLoanAmount());
+			Employee tf = new TemporaryEmployee(employeeId, employeeName, hoursWorked, hourlyWages);
+			System.out.println();
+			
+			System.out.println("The Calculated Salary is: "+ tf.getSalary());
+			Loan ln = new Loan();
+			System.out.println("The loan amount is "+ ln.calculateLoanAmount(tf) );
+			return;
 		}else {
 			System.out.println("Invalid input");
 		}
